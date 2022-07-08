@@ -4,15 +4,21 @@ import TodoForm from "./components/TodoForm";
 import TodoList from './components/TodoList'
 import TodoContextProvider from "./context/TodoContext";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+
 function App() {
   return (
-    <TodoContextProvider>
-      <div className="App">
-        <Header />
-        <TodoForm />
-        <TodoList />
-      </div>
-    </TodoContextProvider>
+    <>
+      <ToastContainer />
+      <TodoContextProvider>
+        <div className="App">
+          <Header />
+          <TodoForm />
+          <TodoList />
+        </div>
+      </TodoContextProvider>
+    </>
     
   );
 }

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { TodoContext } from '../context/TodoContext'
+import { toast } from 'react-toastify';
 
 function Todo({ todo }) {
 
@@ -11,6 +12,7 @@ function Todo({ todo }) {
     const item = todos[findIndex]
     item.completed = !item.completed
     setTodos(allTodos)
+    toast.success("Completed")
   }
 
   return (
