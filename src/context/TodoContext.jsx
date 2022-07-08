@@ -34,7 +34,7 @@ function TodoContextProvider({ children }) {
     }
 
   return (
-    <TodoContext.Provider value={{ todos, addTodo, clearAll, deleteItem }}>{children}</TodoContext.Provider>
+    <TodoContext.Provider value={{ todos, addTodo, clearAll, deleteItem, setTodos }}>{children}</TodoContext.Provider>
   )
 }
 
