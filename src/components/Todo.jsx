@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../context/TodoContext'
 
 function Todo({ todo }) {
+
+  const { deleteItem } = useContext(TodoContext)
 
   return (
 
@@ -10,7 +13,7 @@ function Todo({ todo }) {
           <span>{todo.title}</span>
       </div>
       <div className='btns'>
-          <button className="deleteButton">
+          <button className="deleteButton" onClick={deleteItem(todo.id)}>
             X
           </button>
       </div>

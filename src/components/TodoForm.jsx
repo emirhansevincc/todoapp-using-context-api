@@ -4,7 +4,7 @@ import { TodoContext } from '../context/TodoContext'
 
 function TodoForm() {
 
-    const { addTodo } = useContext(TodoContext)
+    const { addTodo, clearAll } = useContext(TodoContext)
 
     const [inputValue, setInputValue] = useState("")
 
@@ -31,7 +31,7 @@ function TodoForm() {
             <button className="btn add-task" type='submit'>
                 Add Todo
             </button>
-            <button className="btn clear">
+            <button className="btn clear" onClick={clearAll}>
                 Clear All
             </button>
         </div>

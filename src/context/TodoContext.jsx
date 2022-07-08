@@ -19,11 +19,22 @@ function TodoContextProvider({ children }) {
     ])
 
     const addTodo = (inputValue) => {
+      if(inputValue === ""){
+        return;
+      }
       setTodos([...todos, { id: uuidv4(), title: inputValue, completed:false }])
     }
 
+    const clearAll = () => {
+      setTodos([])
+    }
+
+    const deleteItem = (id) => {
+      setTodos(todos.filter((todo) => todo !== id))
+    }
+
   return (
-    <TodoContext.Provider value={{ todos, addTodo }}>{children}</TodoContext.Provider>
+    <TodoContext.Provider value={{ todos, addTodo, clearAll, deleteItem }}>{children}</TodoContext.Provider>
   )
 }
 
