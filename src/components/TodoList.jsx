@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../context/TodoContext'
+import Todo from './Todo'
 
 function TodoList() {
+
+  const { todos } = useContext(TodoContext)
+
   return (
-    <div>TodoList</div>
+    <ul className='parentList'>
+      {
+        todos.map((todo) => (
+          <Todo key={todo.id} todo={todo} />
+        ))
+      }
+    </ul>
   )
 }
 

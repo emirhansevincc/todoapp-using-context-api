@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  background-color: #333;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.App{
+  background-color: #222;
+  border-radius: 12px;
+  padding: 15px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header{
+  text-align: center;
+  margin: 10px 0 20px 0;
+  font-size: 22px;
+  letter-spacing: 5px;
+}
+.todoFormInput{
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0 10px 0;
+  width: 300px;
+}
+.todoFormInput:focus{
+  outline: none;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+.btn{
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+.btn:hover{background-color: lightgray;}
+.parentList{
+  background-color: transparent;
+  width: 100%;
+  list-style: none;
+  margin-top: 25px;
+  font-size: 20px;
+}
+.list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.deleteButton{
+  background-color: transparent;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.list span{
+  margin-left: 12px;
+}
+.list input{
+  width: 18px;
+  height: 18px;
+}
+.list span.completed{
+  text-decoration: line-through;
+  color: grey;
+}
