@@ -13,13 +13,17 @@ function TodoContextProvider({ children }) {
         },
         {
             id: uuidv4(),
-            title: "Clean the car",
+            title: "Clean the house",
             completed: false
         },
     ])
 
+    const addTodo = (inputValue) => {
+      setTodos([...todos, { id: uuidv4(), title: inputValue, completed:false }])
+    }
+
   return (
-    <TodoContext.Provider value={{todos}}>{children}</TodoContext.Provider>
+    <TodoContext.Provider value={{ todos, addTodo }}>{children}</TodoContext.Provider>
   )
 }
 
