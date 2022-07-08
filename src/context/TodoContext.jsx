@@ -3,19 +3,19 @@ import { v4 as uuidv4} from 'uuid'
 
 export const TodoContext = createContext()
 
-function TodoContextProvider({ children }) {
+const TodoContextProvider = ({ children }) => {
 
     const [todos, setTodos] = useState([
-        {
-            id: uuidv4(),
-            title: "Clean the car",
-            completed: false
-        },
-        {
-            id: uuidv4(),
-            title: "Clean the house",
-            completed: false
-        },
+      {
+        id: uuidv4(),
+        title: "Clean the car",
+        completed: false
+      },
+      {
+        id: uuidv4(),
+        title: "Clean the house",
+        completed: false
+      },
     ])
 
     const addTodo = (inputValue) => {
@@ -29,12 +29,12 @@ function TodoContextProvider({ children }) {
       setTodos([])
     }
 
-    const deleteItem = (id) => {
+    const deleteTodo = (id) => {
       setTodos(todos.filter((todo) => todo !== id))
     }
 
   return (
-    <TodoContext.Provider value={{ todos, addTodo, clearAll, deleteItem, setTodos }}>{children}</TodoContext.Provider>
+    <TodoContext.Provider value={{ todos, addTodo, clearAll, deleteTodo, setTodos }}>{children}</TodoContext.Provider>
   )
 }
 

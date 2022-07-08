@@ -3,7 +3,7 @@ import { TodoContext } from '../context/TodoContext'
 
 function Todo({ todo }) {
 
-  const { deleteItem, setTodos, todos } = useContext(TodoContext)
+  const { deleteTodo, setTodos, todos } = useContext(TodoContext)
 
   const onChange = (id) => {
     const allTodos = [...todos]
@@ -21,7 +21,9 @@ function Todo({ todo }) {
           <span className={todo.completed ? "completed" : ""}>{todo.title}</span>
       </div>
       <div className='btns'>
-          <button className="deleteButton" onClick={deleteItem(todo.id)}>
+          <button className="deleteButton" onClick={() => {
+            deleteTodo(todo.id)
+          }}>
             X
           </button>
       </div>
